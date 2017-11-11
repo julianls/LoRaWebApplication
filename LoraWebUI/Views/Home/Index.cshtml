@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model LoraWebUI.Models.DeviceViewModels.HomeViewModel
+
+<div>
+    <form asp-controller="Home" asp-action="Index">
+        <select asp-for="DeviceId"
+                asp-items="@(new SelectList(Model.Devices,"Id","Name"))">
+            <option>Please select one</option>
+        </select>
+        <input type="submit" />
+    </form>
+
+    @foreach (var item in Model.DataLines)
+    {
+        <p>
+            @item.EnqueuedTime
+            DeviceId =>
+            @item.ConnectionDeviceId
+            AppId =>
+            @item.AppId
+            RawData =>
+            @item.rawData
+        </p><br />
+    }
+</div>
