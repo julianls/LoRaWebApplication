@@ -262,3 +262,4 @@ __pycache__/
 
 # Ignore appsetings.json
 LoraWebUI/appsettings.json
+LoraWebUI/appsettings.Development.json
